@@ -65,12 +65,12 @@ ruleTester.run('media-has-caption', rule, {
     },
     {
       code: '<video>{<track kind="captions" /> ?? null}</video>',
-      features: ['nullish coalescing'],
+      features: ['nullish coalescing', 'no-babel-old'],
       languageOptions: { ecmaVersion: 2020 },
     },
     {
       code: '<video>{null ?? <track kind="captions" />}</video>',
-      features: ['nullish coalescing'],
+      features: ['nullish coalescing', 'no-babel-old'],
       languageOptions: { ecmaVersion: 2020 },
     },
     {
@@ -201,7 +201,7 @@ ruleTester.run('media-has-caption', rule, {
     },
     {
       code: '<video>{<span /> ?? <track kind="captions" />}</video>',
-      features: ['nullish coalescing'],
+      features: ['nullish coalescing', 'no-babel-old'],
       languageOptions: { ecmaVersion: 2020 },
       errors: [expectedError],
     },
